@@ -15,6 +15,10 @@
         body {
             vertical-align:middle;
             display:table-cell;
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
         }
         #box {
             background:#555;
@@ -51,14 +55,16 @@
             position:relative;
             box-shadow: 0 5px 10px rgba(0,0,0,0.75), 0 0 15px rgba(0,0,0,1), 0 0 1px 3px rgba(0,0,0,0.5), 0 -4px 5px rgba(255,255,255,0.5), inset 0 -2px 3px #555, inset 0 -4px 5px #000, inset 0 0 3px #000, inset 0 20px 15px rgba(255,255,255,0.05);
         }
-        a:hover, a:focus {
-            cursor: pointer;
+        a:active {
             transition:0.1s;
             outline:0;
             text-shadow:0 0 2px black, 0 0 2px white;
             height:65px;
             padding-top:5px;
             background-image:linear-gradient(-90deg,#444,#222);
+        }
+        a:hover, a:focus {
+            cursor: pointer;
             box-shadow: 0 -5px 10px rgba(0,0,0,0.75), 0 0 15px rgba(0,0,0,1), 0 0 1px 3px rgba(0,0,0,0.5), 0 4px 5px rgba(255,255,255,0.5), inset 0 2px 3px #555, inset 0 4px 5px #000, inset 0 0 3px #000, inset 0 -20px 15px rgba(255,255,255,0.05);
         }
         a span {
@@ -103,12 +109,15 @@
             border-radius: 50%;
             box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, #89FF00 0 2px 12px;
         }
+        .logo {
+            margin-bottom: -58px;
+        }
     </style>
     <script src="https://play.workadventu.re/iframe_api.js"></script>
     <script>
         /// <reference path="../node_modules/@workadventure/iframe-api-typings/iframe_api.d.ts" />
 
-        const code = "5300"
+        const code = "241783"
         let userCode = ""
 
         window.onload = () => {
@@ -177,6 +186,10 @@
             <a role="button" tabindex="10" class="scaledigit">&#42;<span>CLEAR</span></a>
             <a role="button" tabindex="0">0</a>
             <a role="button" tabindex="11">&#35;<span>ENTER</span></a>
+
+            <div class="logo">
+                <img src="https://workadventu.re/images/general/logo.svg" alt="workadventure logo">
+            </div>
         </div>
     </div>
 </body>

@@ -1,6 +1,5 @@
 /// <reference types="@workadventure/iframe-api-typings" />
 
-import { CreateUIWebsiteEvent } from "@workadventure/iframe-api-typings/Api/Events/ui/UIWebsite";
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 
 console.log('Script started successfully');
@@ -9,30 +8,36 @@ let currentPopup: any = undefined;
 let vip1DoorClosed = true;
 let vip2DoorClosed = true;
 let backstageDoorClosed = true;
-
+let registerMessage: any;
 // Waiting for the API to be readydoesn
 WA.onInit().then(() => {
     console.log('Scripting API ready');
     console.log('Player tags: ',WA.player.tags)
 
-    //WEBSITES
-    const mapUrl = WA.room.mapURL
-    const root = mapUrl.substring(0, mapUrl.lastIndexOf("/"))
-    let register: CreateUIWebsiteEvent = {
-        url:  root + "/register.html",
-        visible: false,
-        allowApi: true,
-        allowPolicy: "",   // The list of feature policies allowed
-        position: {
-            vertical: "bottom",
-            horizontal: "right",
-        },
-        size: {            // Size on the UI (available units: px|em|%|cm|in|pc|pt|mm|ex|vw|vh|rem and others values auto|inherit)
-            height: "0px",
-            width: "0px",
-        },
+    if (WA.player.state.registered) {
+        WA.controls.restorePlayerProximityMeeting()
+        WA.room.hideLayer("entryClosed")
+    } else {
+        WA.controls.disablePlayerProximityMeeting()
+        registerMessage = WA.ui.displayActionMessage({
+            message: "You can't move right now because you are not registered",
+            callback: () => {}
+        });
+
+        const mapUrl = WA.room.mapURL
+        const root = mapUrl.substring(0, mapUrl.lastIndexOf("/"))
+        WA.nav.openCoWebSite(root + "/register.html", true, "", 40)
     }
-    WA.ui.website.open(register)
+    WA.player.state.onVariableChange('registered').subscribe((registered) => {
+        if (registered) {
+            WA.room.hideLayer("entryClosed")
+            WA.controls.restorePlayerControls()
+            registerMessage.remove()
+            WA.nav.closeCoWebSite()
+        } else {
+          WA.room.showLayer("entryClosed")
+        }
+    });
 
     // DOORS
     WA.room.area.onEnter("vip1Door").subscribe(() => {
