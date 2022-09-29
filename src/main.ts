@@ -65,7 +65,7 @@ WA.onInit().then(() => {
         }
     })
     WA.room.area.onEnter("backstageDoor").subscribe(() => {
-        if (WA.player.tags.includes("editor") && backstageDoorClosed) {
+        if (WA.player.tags.includes("admin") && backstageDoorClosed) {
             WA.ui.displayActionMessage({
                 message: "Press SPACE or Touch to open the door (only for you)",
                 callback: () => {
