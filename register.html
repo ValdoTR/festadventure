@@ -240,18 +240,25 @@
         }
 
         WA.onInit().then(() => {
-            console.log("player variable:",WA.player.state.registered)
+            console.log("'registered' variable:",WA.player.state.registered)
             if (WA.player.state.registered) {
                 WA.room.hideLayer("entryClosed")
             } else {
-                resetRegister()
+                WA.controls.disablePlayerControls()
+                const registerMessage = WA.ui.displayActionMessage({
+                    message: "You can't move right now because you are not registered. If you can't see the register form, refresh your page ;)",
+                    callback: () => {}
+                });
                 WA.nav.openCoWebSite("register.html")
             }
 
             WA.state.onVariableChange('registered').subscribe((registered) => {
-                console.log("variable changes to:",registered)
+                console.log("'registered' variable changed to:",registered)
                 if (registered) {
                     WA.room.hideLayer("entryClosed")
+                    WA.controls.restorePlayerControls()
+                    registerMessage.remove()
+                    WA.nav.closeCoWebSite()
                 } else {
                     WA.room.showLayer("entryClosed")
                 }
@@ -265,20 +272,13 @@
         }
 
         function register() {
+            console.log("function register()")
             WA.player.state.saveVariable("registered", true, {
                 public: true, // because we might need it
                 persist: true, // to keep the info after refresh / leave
                 ttl: 48 * 3600, // 2 days
                 scope: "world", // if other maps for the same fest
-            });
-        }
-        function resetRegister() {
-            WA.player.state.saveVariable("registered", false, {
-                public: true, // because we might need it
-                persist: true, // to keep the info after refresh / leave
-                ttl: 48 * 3600, // 2 days
-                scope: "world", // if other maps for the same fest
-            });
+            }).then(() => console.log("WA.player.state.registered",WA.player.state.registered));
         }
     </script>
 </head>
