@@ -8,6 +8,7 @@ export default defineConfig({
             input: {
                 index: "./index.html",
                 register: "./register.html",
+                digicode: "./digicode.html",
                 ...getMapsScripts(),
             },
         },
