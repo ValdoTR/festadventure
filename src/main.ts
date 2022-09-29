@@ -299,7 +299,7 @@ WA.onInit().then(() => {
             {
                 label: 'Left',
                 className: 'primary',
-                callback: () => WA.nav.openTab("https://play.workadventu.re/@/digital-umami's/festadventure/island"),
+                callback: () => WA.nav.goToRoom("/@/portal"),
             },
             {
                 label: 'Right',
