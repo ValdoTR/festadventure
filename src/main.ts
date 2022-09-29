@@ -8,22 +8,18 @@ let currentPopup: any = undefined;
 let vip1DoorClosed = true;
 let vip2DoorClosed = true;
 let backstageDoorClosed = true;
-let registerMessage: any;
+
 // Waiting for the API to be readydoesn
 WA.onInit().then(() => {
     console.log('Scripting API ready');
     console.log('Player tags: ',WA.player.tags)
 
+    // ENTRY
     if (WA.player.state.registered) {
         WA.controls.restorePlayerProximityMeeting()
         WA.room.hideLayer("entryClosed")
     } else {
         WA.controls.disablePlayerProximityMeeting()
-        registerMessage = WA.ui.displayActionMessage({
-            message: "You can't move right now because you are not registered",
-            callback: () => {}
-        });
-
         const mapUrl = WA.room.mapURL
         const root = mapUrl.substring(0, mapUrl.lastIndexOf("/"))
         WA.nav.openCoWebSite(root + "/register.html", true, "", 40)
@@ -32,7 +28,6 @@ WA.onInit().then(() => {
         if (registered) {
             WA.room.hideLayer("entryClosed")
             WA.controls.restorePlayerControls()
-            registerMessage.remove()
             WA.nav.closeCoWebSite()
         } else {
           WA.room.showLayer("entryClosed")
