@@ -216,6 +216,11 @@
             background-color: #f18989;
             border-color: #f18989;
         }
+
+        #logo {
+          height: 48px;
+          margin: 0 auto;
+        }
     </style>
     
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -256,10 +261,13 @@
     </script>
 </head>
 <body>
-    <div class="container">
+    <div class="container mt-4">
+        <div class="row mt-4">
+          <img id="logo" src="./FestAdventure_Logo.png" alt="FestAdventure Logo">
+        </div>
         <form>
-          <div class="row mt-4">
-            <h4>Tell us a little bit about you ;)</h4>
+          <div class="row mt-5">
+            <h4>Tell us a little bit about you!</h4>
             <div class="input-group input-group-icon">
               <input type="text" placeholder="Full name" id="fullname" required/>
               <div class="input-icon"><i class="fa fa-user"></i></div>
@@ -287,7 +295,7 @@
             </div>
           </div>
 
-          <div class="row mt-4">
+          <div class="row mt-5">
             <button type="button" class="btn btn-primary btn-lg btn-block" id="registerBtn" disabled onclick="register()">OK, let me in!</button>
           </div>
         </form>
