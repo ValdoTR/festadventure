@@ -41,7 +41,7 @@ WA.onInit().then(() => {
 
     // DOORS
     WA.room.area.onEnter("vip1Door").subscribe(() => {
-        if (WA.player.tags.includes("admin") && vip1DoorClosed) {
+        if (WA.player.tags.includes("festadventure") && vip1DoorClosed) {
             WA.ui.displayActionMessage({
                 message: "Press SPACE or Touch to open the door (only for you)",
                 callback: () => {
@@ -53,7 +53,7 @@ WA.onInit().then(() => {
         }
     })
     WA.room.area.onEnter("vip2Door").subscribe(() => {
-        if (WA.player.tags.includes("admin") && vip2DoorClosed) {
+        if (WA.player.tags.includes("festadventure") && vip2DoorClosed) {
             WA.ui.displayActionMessage({
                 message: "Press SPACE or Touch to open the door (only for you)",
                 callback: () => {
@@ -65,7 +65,7 @@ WA.onInit().then(() => {
         }
     })
     WA.room.area.onEnter("backstageDoor").subscribe(() => {
-        if (WA.player.tags.includes("admin") && backstageDoorClosed) {
+        if (WA.player.tags.includes("festadventure") && backstageDoorClosed) {
             WA.ui.displayActionMessage({
                 message: "Press SPACE or Touch to open the door (only for you)",
                 callback: () => {
