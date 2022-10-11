@@ -858,12 +858,12 @@
                 {
                  "height":384,
                  "id":89,
-                 "name":"FerrisWheel",
+                 "name":"Game",
                  "properties":[
                         {
                          "name":"openWebsite",
                          "type":"string",
-                         "value":"https:\/\/cdn.htmlgames.com\/FerrisWheel\/"
+                         "value":"https:\/\/html5.gamescrush.com\/temple-run\/"
                         }, 
                         {
                          "name":"silent",
