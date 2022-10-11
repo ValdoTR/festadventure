@@ -28,6 +28,7 @@ WA.onInit().then(() => {
         if (registered) {
             WA.room.hideLayer("entryClosed")
             WA.controls.restorePlayerControls()
+            WA.controls.restorePlayerProximityMeeting()
             WA.nav.closeCoWebSite()
         } else {
           WA.room.showLayer("entryClosed")
