@@ -844,6 +844,11 @@
                          "value":"https:\/\/www.youtube.com\/embed\/L8ZoGtAQ1mw"
                         }, 
                         {
+                         "name":"openWebsiteWidth",
+                         "type":"int",
+                         "value":100
+                        }, 
+                        {
                          "name":"silent",
                          "type":"bool",
                          "value":true
@@ -1116,6 +1121,11 @@
                          "name":"openWebsite",
                          "type":"string",
                          "value":"https:\/\/www.youtube.com\/embed\/Yd5_VFar5YM"
+                        }, 
+                        {
+                         "name":"openWebsiteWidth",
+                         "type":"int",
+                         "value":100
                         }, 
                         {
                          "name":"silent",
