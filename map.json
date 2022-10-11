@@ -675,7 +675,12 @@
                         {
                          "name":"openWebsite",
                          "type":"string",
-                         "value":"https:\/\/www.youtube.com\/embed\/jjwilAja7Lc"
+                         "value":"https:\/\/www.youtube.com\/embed\/jjwilAja7Lc?autoplay=1"
+                        }, 
+                        {
+                         "name":"openWebsitePolicy",
+                         "type":"string",
+                         "value":"fullscreen;autoplay"
                         }, 
                         {
                          "name":"silent",
