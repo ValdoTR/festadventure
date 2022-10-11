@@ -255,7 +255,7 @@ WA.onInit().then(() => {
     WA.room.area.onLeave("Sign7").subscribe(closePopup)
 
     WA.room.area.onEnter("Sign8").subscribe(() => {
-        currentPopup = WA.ui.openPopup("Sign8Popup", "** Main Stage ** \n\nVIP", [])
+        currentPopup = WA.ui.openPopup("Sign8Popup", "Welcome to the\nMain Stage", [])
     })
     WA.room.area.onLeave("Sign8").subscribe(closePopup)
 
