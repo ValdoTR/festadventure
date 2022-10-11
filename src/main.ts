@@ -34,6 +34,7 @@ WA.onInit().then(() => {
           WA.room.showLayer("entryClosed")
         }
     });
+    
 
     // STAGES
     WA.room.area.onEnter("MainStage").subscribe(() => {
