@@ -35,6 +35,16 @@ WA.onInit().then(() => {
         }
     });
 
+    // STAGES
+    WA.room.area.onEnter("MainStage").subscribe(() => {
+        // @ts-ignore
+        WA.controls.turnOffMicrophone()
+    })
+    WA.room.area.onEnter("SecondStage").subscribe(() => {
+        // @ts-ignore
+        WA.controls.turnOffMicrophone()
+    })
+
     // DOORS
     WA.room.area.onEnter("vip1Door").subscribe(() => {
         if (WA.player.tags.includes("festadventure") && vip1DoorClosed) {
