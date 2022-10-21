@@ -20,9 +20,7 @@ WA.onInit().then(() => {
         WA.room.hideLayer("entryClosed")
     } else {
         WA.controls.disablePlayerProximityMeeting()
-        const mapUrl = WA.room.mapURL
-        const root = mapUrl.substring(0, mapUrl.lastIndexOf("/"))
-        WA.nav.openCoWebSite(root + "/register.html", true, "", 40)
+        currentPopup = WA.ui.openPopup("WelcomePopup", "Welcome to FestAdventure,\n You have to register to enter the Virtual Festival World", [])
     }
     WA.player.state.onVariableChange('registered').subscribe((registered) => {
         if (registered) {
@@ -35,6 +33,7 @@ WA.onInit().then(() => {
         }
     });
     
+    WA.room.area.onLeave("Welcome").subscribe(closePopup)
 
     // STAGES
     WA.room.area.onEnter("MainStage").subscribe(() => {

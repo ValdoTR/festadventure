@@ -9,6 +9,7 @@ export default defineConfig({
                 index: "./index.html",
                 register: "./register.html",
                 digicode: "./digicode.html",
+                imageViewer: "./imageViewer.html",
                 ...getMapsScripts(),
             },
         },
