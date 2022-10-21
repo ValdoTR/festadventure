@@ -20,7 +20,13 @@ WA.onInit().then(() => {
         WA.room.hideLayer("entryClosed")
     } else {
         WA.controls.disablePlayerProximityMeeting()
-        currentPopup = WA.ui.openPopup("WelcomePopup", "Welcome to FestAdventure,\n You have to register to enter the Virtual Festival World", [])
+        currentPopup = WA.ui.openPopup("WelcomePopup", "Welcome to FestAdventure,\n You have to register to enter the Virtual Festival World", [
+            {
+                label: 'Instruction',
+                className: 'primary',
+                callback: () => WA.nav.openCoWebSite("https://www.youtube.com/embed/eNKRI4TwjQ8?autoplay=1", false, "fullscreen;autoplay"),
+            }
+        ])
     }
     WA.player.state.onVariableChange('registered').subscribe((registered) => {
         if (registered) {
@@ -33,7 +39,7 @@ WA.onInit().then(() => {
         }
     });
     
-    WA.room.area.onLeave("Welcome").subscribe(closePopup)
+    WA.room.area.onLeave("Welcome").subscribe(() => {closePopup(); WA.nav.closeCoWebSite()})
 
     // STAGES
     WA.room.area.onEnter("MainStage").subscribe(() => {
