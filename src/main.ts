@@ -125,11 +125,11 @@ WA.onInit().then(() => {
 
     // SOCIAL NETWORKS POPUPS
     WA.room.area.onEnter("Discord").subscribe(() => {
-        currentPopup = WA.ui.openPopup("DiscordPopup", "Join us on Discord", [
+        currentPopup = WA.ui.openPopup("DiscordPopup", "Become a member", [
             {
                 label: 'Hell yeah!',
                 className: 'primary',
-                callback: () => WA.nav.openTab("https://discord.com/invite/coachella"),
+                callback: () => WA.nav.openTab("https://shop.q-dance.com/network"),
             }
         ])
     })
@@ -140,7 +140,7 @@ WA.onInit().then(() => {
             {
                 label: 'Hell yeah!',
                 className: 'primary',
-                callback: () => WA.nav.openTab("https://www.instagram.com/coachella/"),
+                callback: () => WA.nav.openTab("https://www.instagram.com/q_dance/"),
             }
         ])
     })
@@ -151,7 +151,7 @@ WA.onInit().then(() => {
             {
                 label: 'Hell yeah!',
                 className: 'primary',
-                callback: () => WA.nav.openTab("https://www.facebook.com/coachella"),
+                callback: () => WA.nav.openTab("https://www.facebook.com/Qdance/"),
             }
         ])
     })
@@ -162,7 +162,7 @@ WA.onInit().then(() => {
             {
                 label: 'Hell yeah!',
                 className: 'primary',
-                callback: () => WA.nav.openTab("https://www.tiktok.com/@coachella"),
+                callback: () => WA.nav.openTab("https://www.tiktok.com/@q_dance_official"),
             }
         ])
     })
@@ -173,18 +173,18 @@ WA.onInit().then(() => {
             {
                 label: 'Hell yeah!',
                 className: 'primary',
-                callback: () => WA.nav.openTab("https://twitter.com/coachella"),
+                callback: () => WA.nav.openTab("https://twitter.com/q_dance"),
             }
         ])
     })
     WA.room.area.onLeave("Twitter").subscribe(closePopup)
 
     WA.room.area.onEnter("Snapchat").subscribe(() => {
-        currentPopup = WA.ui.openPopup("SnapchatPopup", "Follow us on Snapchat", [
+        currentPopup = WA.ui.openPopup("SnapchatPopup", "Become a member", [
             {
                 label: 'Hell yeah!',
                 className: 'primary',
-                callback: () => WA.nav.openTab("https://www.snapchat.com/add/coachella"),
+                callback: () => WA.nav.openTab("https://shop.q-dance.com/network"),
             }
         ])
     })
@@ -195,7 +195,7 @@ WA.onInit().then(() => {
             {
                 label: 'Hell yeah!',
                 className: 'primary',
-                callback: () => WA.nav.openTab("https://www.youtube.com/user/coachella"),
+                callback: () => WA.nav.openTab("https://www.youtube.com/c/qdance"),
             }
         ])
     })
@@ -206,7 +206,7 @@ WA.onInit().then(() => {
             {
                 label: 'Hell yeah!',
                 className: 'primary',
-                callback: () => WA.nav.openTab("https://coachella.com/newsletter"),
+                callback: () => WA.nav.openTab("https://shop.q-dance.com/network"),
             }
         ])
     })
@@ -217,18 +217,18 @@ WA.onInit().then(() => {
             {
                 label: 'Hell yeah!',
                 className: 'primary',
-                callback: () => WA.nav.openTab("https://www.coachella.com/"),
+                callback: () => WA.nav.openTab("https://www.q-dance.com/network/library"),
             }
         ])
     })
     WA.room.area.onLeave("Website").subscribe(closePopup)
 
     WA.room.area.onEnter("Survey").subscribe(() => {
-        currentPopup = WA.ui.openPopup("SurveyPopup", "Take our Survey", [
+        currentPopup = WA.ui.openPopup("SurveyPopup", "Become a member", [
             {
                 label: 'Hell yeah!',
                 className: 'primary',
-                callback: () => WA.nav.openTab("https://coachella.com/newsletter"),
+                callback: () => WA.nav.openTab("https://shop.q-dance.com/network"),
             }
         ])
     })
